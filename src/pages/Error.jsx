@@ -1,7 +1,16 @@
+import { Link } from 'react-router-dom'
+
 function Error() {
   return (
     <div>
-      <h1>404 - Page non trouvée</h1>
+      {/* Code erreur */}
+      <h1>404</h1>
+
+      {/* Message d'erreur */}
+      <p>Oups! La page que vous demandez n'existe pas.</p>
+
+      {/* Lien pour retourner à l'accueil */}
+      <Link to="/">Retourner sur la page d'accueil</Link>
     </div>
   )
 }
