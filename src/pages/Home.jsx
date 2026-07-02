@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Card from '../components/Card'
 
 function Home() {
   // useState pour stocker la liste des logements
@@ -14,9 +15,13 @@ function Home() {
   return (
     <div>
       <h1>Page Accueil</h1>
-      {/* On affiche le titre de chaque logement pour tester */}
+      {/* On affiche une Card pour chaque logement */}
       {properties.map(property => (
-        <p key={property.id}>{property.title}</p>
+        <Card 
+          key={property.id}
+          title={property.title}
+          cover={property.cover}
+        />
       ))}
     </div>
   )
