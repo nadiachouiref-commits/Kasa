@@ -15,6 +15,7 @@ function Home() {
   return (
     <div>
       <h1>Page Accueil</h1>
+
       {/* On affiche une Card pour chaque logement */}
       {properties.map(property => (
         <Card 
