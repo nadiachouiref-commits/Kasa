@@ -20,6 +20,7 @@ function Home() {
       {properties.map(property => (
         <Card 
           key={property.id}
+          id={property.id}
           title={property.title}
           cover={property.cover}
         />

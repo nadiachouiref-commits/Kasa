@@ -1,13 +1,17 @@
-// On reçoit les données du logement via les props
-function Card({ title, cover }) {
-  return (
-    <div>
-      {/* Image de couverture du logement */}
-      <img src={cover} alt={title} />
+import { Link } from 'react-router-dom'
 
-      {/* Titre du logement */}
-      <p>{title}</p>
-    </div>
+// On reçoit l'id, le titre et l'image via les props
+function Card({ id, title, cover }) {
+  return (
+    <Link to={`/property/${id}`}>
+      <div>
+        {/* Image de couverture */}
+        <img src={cover} alt={title} />
+
+        {/* Titre du logement */}
+        <p>{title}</p>
+      </div>
+    </Link>
   )
 }
 
