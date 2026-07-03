@@ -1,11 +1,13 @@
+import styles from './Footer.module.css'
+
 function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       {/* Logo Kasa en blanc */}
-      <img src="/logo-white.png" alt="Kasa" />
+      <img className={styles.logo} src="/logo-white.png" alt="Kasa" />
 
       {/* Texte copyright */}
-      <p>© 2024 Kasa. All rights reserved</p>
+      <p className={styles.text}>© 2024 Kasa. All rights reserved</p>
     </footer>
   )
 }

@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
+import styles from './Card.module.css'
 
-// On reçoit l'id, le titre et l'image via les props
 function Card({ id, title, cover }) {
   return (
-    <Link to={`/property/${id}`}>
-      <div>
+    <Link to={`/property/${id}`} className={styles.link}>
+      <div className={styles.card}>
         {/* Image de couverture */}
-        <img src={cover} alt={title} />
+        <img className={styles.image} src={cover} alt={title} />
 
         {/* Titre du logement */}
-        <p>{title}</p>
+        <p className={styles.title}>{title}</p>
       </div>
     </Link>
   )

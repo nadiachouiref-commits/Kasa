@@ -1,0 +1,31 @@
+/* Conteneur principal du header */
+.header {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Logo */
+.logo {
+  width: 145px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+/* Liens de navigation */
+.navLink {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Lien actif souligné */
+.active {
+  text-decoration: underline;
+}
