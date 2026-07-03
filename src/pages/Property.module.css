@@ -1,0 +1,104 @@
+/* Conteneur principal de la page logement */
+.property {
+  padding: 0 100px;
+  margin-bottom: 40px;
+}
+
+/* Infos principales */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+/* Côté gauche : titre, location, tags */
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Titre du logement */
+.title {
+  color: #FF6060;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+/* Localisation */
+.location {
+  color: black;
+  font-size: 16px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* Conteneur des tags */
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+/* Tag individuel */
+.tag {
+  background-color: #FF6060;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Côté droit : host et rating */
+.infoRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Conteneur host */
+.host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Nom du host */
+.hostName {
+  color: #FF6060;
+  font-size: 18px;
+  text-align: right;
+}
+
+/* Photo du host */
+.hostPicture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Conteneur étoiles */
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+/* Étoile active */
+.starActive {
+  color: #FF6060;
+  font-size: 24px;
+}
+
+/* Étoile inactive */
+.starInactive {
+  color: #E3E3E3;
+  font-size: 24px;
+}
+
+/* Conteneur des collapses */
+.collapses {
+  display: flex;
+  gap: 30px;
+}

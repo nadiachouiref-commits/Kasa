@@ -1,0 +1,51 @@
+/* Conteneur principal du carrousel */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* Image du carrousel */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bouton précédent */
+.prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/* Bouton suivant */
+.next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/* Compteur d'images */
+.counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 18px;
+}

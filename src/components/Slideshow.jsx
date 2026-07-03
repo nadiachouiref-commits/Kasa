@@ -1,13 +1,12 @@
 import { useState } from 'react'
+import styles from './Slideshow.module.css'
 
-// On reçoit la liste des images via les props
 function Slideshow({ pictures }) {
-  // index de l'image actuellement affichée
+  /* Index de l'image actuellement affichée */
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Image précédente
+  /* Image précédente */
   const handlePrev = () => {
-    // Si on est à la première image, on va à la dernière
     if (currentIndex === 0) {
       setCurrentIndex(pictures.length - 1)
     } else {
@@ -15,9 +14,8 @@ function Slideshow({ pictures }) {
     }
   }
 
-  // Image suivante
+  /* Image suivante */
   const handleNext = () => {
-    // Si on est à la dernière image, on va à la première
     if (currentIndex === pictures.length - 1) {
       setCurrentIndex(0)
     } else {
@@ -26,16 +24,18 @@ function Slideshow({ pictures }) {
   }
 
   return (
-    <div>
+    <div className={styles.slideshow}>
       {/* Image actuelle */}
-      <img src={pictures[currentIndex]} alt={`photo ${currentIndex + 1}`} />
+      <img className={styles.image} src={pictures[currentIndex]} alt={`photo ${currentIndex + 1}`} />
 
-      {/* On affiche les boutons seulement s'il y a plus d'une image */}
+      {/* Boutons et compteur seulement s'il y a plus d'une image */}
       {pictures.length > 1 && (
-        <div>
-          <button onClick={handlePrev}>Précédent</button>
-          <button onClick={handleNext}>Suivant</button>
-        </div>
+        <>
+          <button className={styles.prev} onClick={handlePrev}>‹</button>
+          <button className={styles.next} onClick={handleNext}>›</button>
+          {/* Compteur d'images */}
+          <p className={styles.counter}>{currentIndex + 1}/{pictures.length}</p>
+        </>
       )}
     </div>
   )

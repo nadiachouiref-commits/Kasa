@@ -2,22 +2,23 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Slideshow from '../components/Slideshow'
 import Collapse from '../components/Collapse'
+import styles from './Property.module.css'
 
 function Property() {
-  // Récupère l'id du logement depuis l'URL
+  /* Récupère l'id du logement depuis l'URL */
   const { id } = useParams()
 
-  // Pour rediriger vers la page 404 si l'id n'existe pas
+  /* Pour rediriger vers la page 404 si l'id n'existe pas */
   const navigate = useNavigate()
 
-  // useState pour stocker les données du logement
+  /* useState pour stocker les données du logement */
   const [property, setProperty] = useState(null)
 
-  // useEffect pour récupérer les données au chargement de la page
+  /* useEffect pour récupérer les données au chargement de la page */
   useEffect(() => {
     fetch(`http://localhost:8080/api/properties/${id}`)
       .then(response => {
-        // Si l'id n'existe pas, on redirige vers la page 404
+        /* Si l'id n'existe pas, on redirige vers la page 404 */
         if (!response.ok) {
           navigate('/404')
         }
@@ -26,25 +27,52 @@ function Property() {
       .then(data => setProperty(data))
   }, [id])
 
-  // Si les données ne sont pas encore chargées
+  /* Si les données ne sont pas encore chargées */
   if (!property) return <p>Chargement...</p>
 
   return (
-    <div>
+    <div className={styles.property}>
       {/* Carrousel d'images */}
       <Slideshow pictures={property.pictures} />
 
-      {/* Titre du logement */}
-      <h1>{property.title}</h1>
+      {/* Infos principales */}
+      <div className={styles.info}>
+        <div className={styles.infoLeft}>
+          {/* Titre du logement */}
+          <h1 className={styles.title}>{property.title}</h1>
 
-      {/* Localisation */}
-      <p>{property.location}</p>
+          {/* Localisation */}
+          <p className={styles.location}>{property.location}</p>
 
-      {/* Description */}
-      <Collapse title="Description" content={property.description} />
+          {/* Tags */}
+          <div className={styles.tags}>
+            {property.tags.map((tag, index) => (
+              <span key={index} className={styles.tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
 
-      {/* Équipements */}
-      <Collapse title="Équipements" content={property.equipments.join(', ')} />
+        <div className={styles.infoRight}>
+          {/* Nom et photo du host */}
+          <div className={styles.host}>
+            <p className={styles.hostName}>{property.host.name}</p>
+            <img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} />
+          </div>
+
+          {/* Rating étoiles */}
+          <div className={styles.rating}>
+            {[1, 2, 3, 4, 5].map(star => (
+              <span key={star} className={star <= property.rating ? styles.starActive : styles.starInactive}>★</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Collapses */}
+      <div className={styles.collapses}>
+        <Collapse title="Description" content={property.description} />
+        <Collapse title="Équipements" content={property.equipments.join(', ')} />
+      </div>
     </div>
   )
 }
