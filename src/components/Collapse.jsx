@@ -1,19 +1,21 @@
 import { useState } from 'react'
+import styles from './Collapse.module.css'
 
-// On reçoit le titre et le contenu via les props
 function Collapse({ title, content }) {
-  // isOpen gère l'état ouvert/fermé, fermé par défaut
+  /* isOpen gère l'état ouvert/fermé, fermé par défaut */
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div>
-      {/* Clic sur le titre pour ouvrir/fermer */}
-      <button onClick={() => setIsOpen(!isOpen)}>
+    <div className={styles.collapse}>
+      {/* Bouton titre avec flèche */}
+      <button className={styles.button} onClick={() => setIsOpen(!isOpen)}>
         {title}
+        {/* Flèche qui change selon l'état */}
+        <span className={styles.arrow}>{isOpen ? '∧' : '∨'}</span>
       </button>
 
-      {/* On affiche le contenu seulement si isOpen est true */}
-      {isOpen && <p>{content}</p>}
+      {/* Contenu affiché seulement si isOpen est true */}
+      {isOpen && <p className={styles.content}>{content}</p>}
     </div>
   )
 }

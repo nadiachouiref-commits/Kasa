@@ -7,7 +7,7 @@ function Footer() {
       <img className={styles.logo} src="/logo-white.png" alt="Kasa" />
 
       {/* Texte copyright */}
-      <p className={styles.text}>© 2024 Kasa. All rights reserved</p>
+      <p className={styles.text}>© 2020 Kasa. All rights reserved</p>
     </footer>
   )
 }

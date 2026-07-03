@@ -1,0 +1,20 @@
+/* Conteneur principal de la page A propos */
+.about {
+  padding: 0 100px;
+}
+
+/* Bannière */
+.banner {
+  margin: 40px 0;
+}
+
+/* Conteneur des Collapses */
+.collapses {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}

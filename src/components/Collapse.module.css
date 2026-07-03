@@ -1,0 +1,35 @@
+/* Conteneur du collapse */
+.collapse {
+  width: 100%;
+}
+
+/* Bouton titre */
+.button {
+  width: 100%;
+  background-color: #FF6060;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Flèche */
+.arrow {
+  font-size: 20px;
+  transform: scaleX(2);
+}
+
+/* Contenu déroulant */
+.content {
+  background-color: #F6F6F6;
+  padding: 15px 20px;
+  border-radius: 0 0 5px 5px;
+  font-size: 16px;
+}
