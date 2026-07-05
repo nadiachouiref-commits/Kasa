@@ -29,3 +29,15 @@
   position: relative;
   z-index: 1;
 }
+
+
+
+
+
+/* mobile */
+@media (max-width: 768px) {
+  .text {
+    text-align: left;
+    padding-left: 10px;
+  }
+}

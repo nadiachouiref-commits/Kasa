@@ -30,3 +30,21 @@
   font-size: 15px;
   text-decoration: underline;
 }
+
+
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .code {
+    font-size: 96px;
+  }
+
+  .message {
+    font-size: 18px;
+    padding: 0 20px;
+    text-align: center;
+    
+  }
+}

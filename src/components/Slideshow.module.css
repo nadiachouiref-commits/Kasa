@@ -49,3 +49,24 @@
   color: #ffffff;
   font-size: 18px;
 }
+
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  .prev {
+    font-size: 30px;
+    left: 10px;
+  }
+
+  .next {
+    font-size: 30px;
+    right: 10px;
+  }
+}

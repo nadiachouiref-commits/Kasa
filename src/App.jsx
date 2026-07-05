@@ -11,15 +11,15 @@ function App() {
     <BrowserRouter>
       {/* Header affiché sur toutes les pages */}
       <Header />
-
-      {/* Les routes changent selon l'URL */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/property/:id" element={<Property />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-
+      <main>
+        {/* Les routes changent selon l'URL */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/property/:id" element={<Property />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
       {/* Footer affiché sur toutes les pages */}
       <Footer />
     </BrowserRouter>

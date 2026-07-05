@@ -5,16 +5,35 @@
 
 /* Bannière */
 .banner {
-  margin: 30px 0;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 /* Grille des logements */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 25px;
   background-color: #F6F6F6;
   border-radius: 25px;
-  padding: 40px;
-  margin-bottom: 40px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home {
+    padding: 0 20px;
+  }
+
+  /* Une seule colonne sur mobile */
+  .grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    gap: 20px;
+  }
 }

@@ -53,17 +53,17 @@ function Property() {
         </div>
 
         <div className={styles.infoRight}>
-          {/* Nom et photo du host */}
-          <div className={styles.host}>
-            <p className={styles.hostName}>{property.host.name}</p>
-            <img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} />
-          </div>
-
           {/* Rating étoiles */}
           <div className={styles.rating}>
             {[1, 2, 3, 4, 5].map(star => (
               <span key={star} className={star <= property.rating ? styles.starActive : styles.starInactive}>★</span>
             ))}
+          </div>
+
+          {/* Nom et photo du host */}
+          <div className={styles.host}>
+            <p className={styles.hostName}>{property.host.name}</p>
+            <img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} />
           </div>
         </div>
       </div>

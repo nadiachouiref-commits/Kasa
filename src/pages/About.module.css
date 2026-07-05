@@ -18,3 +18,17 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 0 20px;
+  }
+
+  .collapses {
+    width: 100%;
+  }
+}
