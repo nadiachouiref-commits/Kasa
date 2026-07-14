@@ -13,6 +13,7 @@ function Property() {
 
   /* useState pour stocker les données du logement */
   const [property, setProperty] = useState(null)
+  const [maxHeight, setMaxHeight] = useState(0)
 
   /* useEffect pour récupérer les données au chargement de la page */
   useEffect(() => {
@@ -53,25 +54,43 @@ function Property() {
         </div>
 
         <div className={styles.infoRight}>
+          {/* Nom et photo du host */}
+          <div className={styles.host}>
+            <p className={styles.hostName}>{property.host.name}</p>
+            <img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} />
+          </div>
+
           {/* Rating étoiles */}
           <div className={styles.rating}>
             {[1, 2, 3, 4, 5].map(star => (
               <span key={star} className={star <= property.rating ? styles.starActive : styles.starInactive}>★</span>
             ))}
           </div>
-
-          {/* Nom et photo du host */}
-          <div className={styles.host}>
-            <p className={styles.hostName}>{property.host.name}</p>
-            <img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} />
-          </div>
+          
         </div>
       </div>
 
       {/* Collapses */}
       <div className={styles.collapses}>
-        <Collapse title="Description" content={property.description} />
-        <Collapse title="Équipements" content={property.equipments.join(', ')} />
+        <Collapse 
+          title="Description" 
+          content={property.description}
+          maxHeight={maxHeight}
+          setMaxHeight={setMaxHeight}
+        />
+
+        <Collapse 
+          title="Équipements" 
+          content={
+            <ul>
+              {property.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          }
+          maxHeight={maxHeight}
+          setMaxHeight={setMaxHeight}
+        />
       </div>
     </div>
   )

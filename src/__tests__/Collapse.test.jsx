@@ -11,7 +11,8 @@ describe('Collapse', () => {
   /* Test 2 : le contenu est caché par défaut */
   it('le contenu est caché par défaut', () => {
     render(<Collapse title="Description" content="Contenu test" />)
-    expect(screen.queryByText('Contenu test')).not.toBeInTheDocument()
+    const content = screen.getByText('Contenu test').closest('div').parentElement
+    expect(content).toHaveStyle('max-height: 0px')
   })
 
   /* Test 3 : le contenu s'affiche au clic */
@@ -26,6 +27,7 @@ describe('Collapse', () => {
     render(<Collapse title="Description" content="Contenu test" />)
     fireEvent.click(screen.getByRole('button'))
     fireEvent.click(screen.getByRole('button'))
-    expect(screen.queryByText('Contenu test')).not.toBeInTheDocument()
+    const content = screen.getByText('Contenu test').closest('div').parentElement
+    expect(content).toHaveStyle('max-height: 0')
   })
 })

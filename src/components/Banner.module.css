@@ -36,8 +36,12 @@
 
 /* mobile */
 @media (max-width: 768px) {
+  .banner {
+    justify-content: flex-start;
+  }
+  
   .text {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 20px;
   }
 }

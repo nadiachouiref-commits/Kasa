@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.3% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
@@ -142,7 +142,27 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,6 +176,7 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -200,6 +221,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,6 +236,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -236,6 +276,7 @@ function Property() {
 &nbsp;
   /* useState pour stocker les données du logement */
   const [property, setProperty] = useState(null)
+  const [maxHeight, setMaxHeight] = useState(0)
 &nbsp;
   /* useEffect pour récupérer les données au chargement de la page */
   useEffect(() =&gt; {
@@ -276,38 +317,57 @@ function Property() {
         &lt;/div&gt;
 &nbsp;
         &lt;div className={styles.infoRight}&gt;
+          {/* Nom et photo du host */}
+          &lt;div className={styles.host}&gt;
+            &lt;p className={styles.hostName}&gt;{property.host.name}&lt;/p&gt;
+            &lt;img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} /&gt;
+          &lt;/div&gt;
+&nbsp;
           {/* Rating étoiles */}
           &lt;div className={styles.rating}&gt;
             {[1, 2, 3, 4, 5].map(star =&gt; (
               &lt;span key={star} className={star &lt;= property.rating ? styles.starActive : styles.starInactive}&gt;★&lt;/span&gt;
             ))}
           &lt;/div&gt;
-&nbsp;
-          {/* Nom et photo du host */}
-          &lt;div className={styles.host}&gt;
-            &lt;p className={styles.hostName}&gt;{property.host.name}&lt;/p&gt;
-            &lt;img className={styles.hostPicture} src={property.host.picture} alt={property.host.name} /&gt;
-          &lt;/div&gt;
+          
         &lt;/div&gt;
       &lt;/div&gt;
 &nbsp;
       {/* Collapses */}
       &lt;div className={styles.collapses}&gt;
-        &lt;Collapse title="Description" content={property.description} /&gt;
-        &lt;Collapse title="Équipements" content={property.equipments.join(', ')} /&gt;
+        &lt;Collapse 
+          title="Description" 
+          content={property.description}
+          maxHeight={maxHeight}
+          setMaxHeight={setMaxHeight}
+        /&gt;
+&nbsp;
+        &lt;Collapse 
+          title="Équipements" 
+          content={
+            &lt;ul&gt;
+              {property.equipments.map((equipment, index) =&gt; (
+                &lt;li key={index}&gt;{equipment}&lt;/li&gt;
+              ))}
+            &lt;/ul&gt;
+          }
+          maxHeight={maxHeight}
+          setMaxHeight={setMaxHeight}
+        /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   )
 }
 &nbsp;
-export default Property</pre></td></tr></table></pre>
+export default Property
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-10T12:46:22.870Z
+                at 2026-07-14T11:15:24.956Z
             </div>
         <script src="../prettify.js"></script>
         <script>

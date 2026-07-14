@@ -23,13 +23,27 @@
 /* Flèche */
 .arrow {
   font-size: 20px;
-  transform: scaleX(2);
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-/* Contenu déroulant */
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+
+/* Contenu déroulant fermé par défaut */
 .content {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
   background-color: #F6F6F6;
-  padding: 15px 20px;
   border-radius: 0 0 5px 5px;
   font-size: 16px;
+  max-height: 0;
+}
+
+
+
+.inner {
+  padding: 15px 20px;
 }

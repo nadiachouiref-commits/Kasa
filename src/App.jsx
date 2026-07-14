@@ -9,19 +9,21 @@ import Footer from './components/Footer'
 function App() {
   return (
     <BrowserRouter>
-      {/* Header affiché sur toutes les pages */}
-      <Header />
-      <main>
-        {/* Les routes changent selon l'URL */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/property/:id" element={<Property />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </main>
-      {/* Footer affiché sur toutes les pages */}
-      <Footer />
+      <div className="app">
+        {/* Header affiché sur toutes les pages */}
+        <Header />
+        <main>
+          {/* Les routes changent selon l'URL */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/property/:id" element={<Property />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </main>
+        {/* Footer affiché sur toutes les pages */}
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }
